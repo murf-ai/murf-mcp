@@ -31,6 +31,9 @@ jobs:
             echo "Tag does not match version in pyproject.toml"
             exit 1
           fi
+          
+      - name: Clean build artifacts
+        run: rm -rf dist/ build/ *.egg-info
 
       - name: Build and publish to TestPyPI
         run: |
