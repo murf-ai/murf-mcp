@@ -8,8 +8,8 @@ from mcp.server.fastmcp import FastMCP
 from mcp.types import TextContent
 from murf import AsyncMurf
 
-from model import TTSDetail, TTSSpeaker
-from utils import (
+from murf_mcp.model import TTSDetail, TTSSpeaker
+from murf_mcp.utils import (
     AudioPlayerError,
     FileMissingError,
     MurfError,
