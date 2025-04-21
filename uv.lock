@@ -173,7 +173,7 @@ wheels = [
 
 [[package]]
 name = "murf-mcp"
-version = "0.1.0"
+version = "0.1.4"
 source = { virtual = "." }
 dependencies = [
     { name = "httpx" },

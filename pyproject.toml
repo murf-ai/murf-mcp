@@ -1,6 +1,6 @@
 [project]
 name = "murf-mcp"
-version = "0.1.4"
+version = "0.1.5"
 description = "An MCP server for interacting with Murf APIs"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,4 +14,4 @@ dependencies = [
 
 
 [project.scripts]
-murf-mcp = "src.server:main"
+murf-mcp = "murf_mcp.server:main"
