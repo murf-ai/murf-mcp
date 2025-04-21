@@ -1,7 +1,7 @@
 [project]
 name = "murf-mcp"
 version = "0.1.0"
-description = "The Murf MCP Server offers seamless integration with MCP clients like [Claude Desktop](https://claude.ai/download), enabling developers and creators to convert text into lifelike speech effortlessly. With over 130 natural-sounding voices across 13+ languages and 20+ speaking styles, Murf provides unparalleled speech customization for a wide range of applications." 
+description = "An MCP server for interacting with Murf APIs"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
