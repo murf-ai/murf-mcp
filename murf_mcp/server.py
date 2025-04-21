@@ -217,5 +217,9 @@ def play_audio(
     return TextContent(type="text", text=f"Audio file {file_path} opened successfully.")
 
 
-if __name__ == "__main__":
+def main():
     mcp.run(transport="stdio")
+
+
+if __name__ == "__main__":
+    main()
