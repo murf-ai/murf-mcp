@@ -144,12 +144,12 @@ async def text_to_speech(
         urls=urls,
         output_dir=output_dir,
         output_filename=filename,
-        format=content[0].format.lower(),
+        audio_format=content[0].format.lower(),
     )
 
     return TextContent(
         type="text",
-        text=f"Audio file named {filename} saved to file_path= {output_dir}/{filename}.",
+        text=f"Audio file saved to file_path= {output_dir}/{filename}.{content[0].format.lower()}",
     )
 
 
