@@ -15,4 +15,4 @@ dependencies = [
 
 [project.scripts]
 murf-mcp = "murf_mcp.server:main"
-claude-setup = "murf_mcp.claude_setup:main"
+setup-murf-mcp-claude = "murf_mcp.claude_setup:main"

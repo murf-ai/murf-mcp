@@ -36,34 +36,47 @@ The Murf MCP Server offers seamless integration with MCP clients like [Claude De
     ```
     Check out their [official guide](https://github.com/astral-sh/uv?tab=readme-ov-file#installation) for more details.
 
-3. Update Claude Desktop Config to install murf, open the config file: 
-    Go to `Claude → Settings → Developer → Edit Config → claude_desktop_config.json` 
+3. There are two ways to proceed with the setup:
+
+   **Option 1: Automated Setup (Recommended)**
+   ```bash
+   uvx setup-murf-mcp-claude
+   ```
+   This will automatically configure Claude Desktop with the Murf MCP server.
+
+   **Option 2: Manual Setup**
+   
+   If you prefer to configure manually, continue with the following steps:
+
+
+    1. Update Claude Desktop Config to install murf, open the config file: 
+        Go to `Claude → Settings → Developer → Edit Config → claude_desktop_config.json` 
+
+        or
+        if you have VS Code installed, run:
+
+        **macOS:**
+         ```bash
+         code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+         ```
+         **Windows:**
+          ```bash
+          code $env:AppData\Claude\claude_desktop_config.json
+          ```
+
     
-    or
-    if you have VS Code installed, run:
+    2.  These will open the config file, add the following lines to the `"mcpServers"` section:
 
-   **macOS:**
-    ```bash
-    code ~/Library/Application\ Support/Claude/claude_desktop_config.json
-    ```
-    **Windows:**
-     ```bash
-     code $env:AppData\Claude\claude_desktop_config.json
-     ```
-
-    
-4.  These will open the config file, add the following lines to the `"mcpServers"` section:
-
-    ```json
-    "Murf":{
-        "command": "uvx",
-        "args": ["murf-mcp"],
-        "env": {
-            "MURF_API_KEY": "YOUR_MURF_API_KEY"
+        ```json
+        "Murf":{
+            "command": "uvx",
+            "args": ["murf-mcp"],
+            "env": {
+                "MURF_API_KEY": "YOUR_MURF_API_KEY"
+            }
         }
-    }
-    ```
-5. Restart the Claude Desktop app to start the MCP server, you should be able to see a small hammer icon in the chat input box. This indicates that the MCP server is running and tools are available.
+        ```
+4. Restart the Claude Desktop app to start the MCP server, you should be able to see a small hammer icon in the chat input box. This indicates that the MCP server is running and tools are available.
 
 **Note:** For Windows users, "Developer Mode" must be enabled in Claude Desktop to utilize the MCP server. To enable it, click the hamburger menu in the top-left corner, select "Help," and then choose "Enable Developer Mode."
 
