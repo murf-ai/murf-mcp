@@ -14,10 +14,10 @@ def get_uvx_path():
     try:
         os_type = platform.system()
         if os_type == "Linux" or os_type == "Darwin":
-            result = subprocess.run(['which', 'uvx'], capture_output=True, text=True, check=True)
+            result = subprocess.run(['which', 'uvx'], capture_output=True, text=True)
             return result.stdout.strip()
         elif os_type == "Windows":
-            result = subprocess.run(['where', 'uvx'], capture_output=True, text=True, check=True)
+            result = subprocess.run(['where', 'uvx'], capture_output=True, text=True)
             return result.stdout.strip()
     except subprocess.CalledProcessError:
         print("Error: uvx not found in PATH. defaulting to 'uvx'")
@@ -59,11 +59,11 @@ def install_on_macOS():
         if (platform.python_version() != "3.11.11"):
             print("Python version is not 3.11.11. Installing 3.11.11...")
             subprocess.run(["uv", "run", "--python", "pypy@3.11.11", "--", "python", "--version"])
-        result = subprocess.run(["which", "brew"], capture_output=True, text=True, check=True)
+        result = subprocess.run(["which", "brew"], capture_output=True, text=True)
         if result.returncode != 0:
             print("Homebrew is not installed. Please install Homebrew first.")
             return
-        result = subprocess.run(["which", "ffmpeg"], capture_output=True, text=True, check=True)
+        result = subprocess.run(["which", "ffmpeg"], capture_output=True, text=True)
         if result.returncode == 0:
             print("FFmpeg is already installed.")
         else:
@@ -181,7 +181,7 @@ def install_on_windows():
         if (platform.python_version() != "3.11.11"):
             print("Python version is not 3.11.11. Installing 3.11.11...")
             subprocess.run(["uv", "run", "--python", "pypy@3.11.11", "--", "python", "--version"])
-        result = subprocess.run(["where", "ffmpeg"], capture_output=True, text=True, check=True)
+        result = subprocess.run(["where", "ffmpeg"], capture_output=True, text=True)
         if result.returncode == 0:
             print("FFmpeg is already installed.")
         else:
