@@ -37,7 +37,7 @@ def get_file_name(text: str, num_letters: int = 10) -> str:
         A string representing the generated file name
     """
     trimmed = text[:num_letters].replace(" ", "_")
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     return f"{trimmed}_{timestamp}"
 
 
