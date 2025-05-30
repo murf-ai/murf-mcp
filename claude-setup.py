@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.11.11
+#!/usr/bin/env python3.11
 
 import json
 import os
@@ -161,9 +161,11 @@ def install_macos() -> None:
     """Install dependencies on macOS."""
     try:
         print(f"Python version: {platform.python_version()}")
-        if platform.python_version() != "3.11.11":
-            print("Python version is not 3.11.11. Installing 3.11.11...")
-            subprocess.run(["uv", "run", "--python", "pypy@3.11.11", "--", "python", "--version"], check=True)
+        version = platform.python_version()
+        major_minor = '.'.join(version.split('.')[:2])
+        if major_minor != "3.11":
+            print("Python version is not 3.11. Installing 3.11...")
+            subprocess.run(["uv", "run", "--python", "pypy@3.11", "--", "python", "--version"], check=True)
 
         if subprocess.run(["which", "brew"], capture_output=True).returncode != 0:
             raise InstallationError("Homebrew is not installed. Please install Homebrew first")
@@ -184,9 +186,11 @@ def install_windows() -> None:
     """Install dependencies on Windows."""
     try:
         print(f"Python version: {platform.python_version()}")
-        if platform.python_version() != "3.11.11":
-            print("Python version is not 3.11.11. Installing 3.11.11...")
-            subprocess.run(["uv", "run", "--python", "pypy@3.11.11", "--", "python", "--version"], check=True)
+        version = platform.python_version()
+        major_minor = '.'.join(version.split('.')[:2])
+        if major_minor != "3.11":
+            print("Python version is not 3.11. Installing 3.11...")
+            subprocess.run(["uv", "run", "--python", "pypy@3.11", "--", "python", "--version"], check=True)
 
         if subprocess.run(["where", "ffmpeg"], capture_output=True).returncode != 0:
             print("FFmpeg not found. Installing...")
