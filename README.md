@@ -65,17 +65,30 @@ The Murf MCP Server offers seamless integration with MCP clients like [Claude De
           ```
 
     
-    2.  These will open the config file, add the following lines to the `"mcpServers"` section:
+    2.  This will open the config file, add the following lines to the `"mcpServers"` section:
 
         ```json
-        "Murf":{
-            "command": "uvx",
-            "args": ["murf-mcp"],
-            "env": {
-                "MURF_API_KEY": "YOUR_MURF_API_KEY"
+        "mcpServers": {
+            "Murf":{
+                "command": "uvx",
+                "args": ["murf-mcp"],
+                "env": {
+                    "MURF_API_KEY": "YOUR_MURF_API_KEY"
+                }
             }
         }
         ```
+    3. Install FFmpeg (required for audio processing):
+
+        **macOS:**
+        ```bash
+        brew install ffmpeg
+        ```
+
+        **Windows:**
+        Download FFmpeg from [here](https://www.ffmpeg.org/download.html)
+
+        
 4. Restart the Claude Desktop app to start the MCP server, you should be able to see a small hammer icon in the chat input box. This indicates that the MCP server is running and tools are available.
 
 **Note:** For Windows users, "Developer Mode" must be enabled in Claude Desktop to utilize the MCP server. To enable it, click the hamburger menu in the top-left corner, select "Help," and then choose "Enable Developer Mode."

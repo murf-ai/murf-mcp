@@ -49,16 +49,13 @@ def update_config_file(config_path: Path) -> None:
         raise FileNotFoundError(f"Config file not found at {config_path}")
 
     print("Config file exists")
-    print(f"Read Permissions: {os.access(config_path, os.R_OK)}")
     
     murf_api_key = input("Please enter your Murf API key: ")
     
     try:
         config = json.loads(config_path.read_text())
     except json.JSONDecodeError:
-        config = {}
-        
-    if not isinstance(config, dict):
+        print("Config file is invalid JSON. Re-writing config file...")
         config = {}
     
     config.setdefault("mcpServers", {})
