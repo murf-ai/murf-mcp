@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "murf-mcp"
-version = "0.1.13"
+version = "0.1.14"
 description = "An MCP server for interacting with Murf APIs"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -16,3 +20,7 @@ dependencies = [
 [project.scripts]
 murf-mcp = "murf_mcp.server:main"
 setup-murf-mcp-claude = "murf_mcp.claude_setup:main"
+setup-murf-mcp-docs = "murf_mcp.setup_docs_mcp.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["murf_mcp"]

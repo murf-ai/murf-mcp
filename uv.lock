@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 
 [[package]]
@@ -173,8 +173,8 @@ wheels = [
 
 [[package]]
 name = "murf-mcp"
-version = "0.1.9"
-source = { virtual = "." }
+version = "0.1.14"
+source = { editable = "." }
 dependencies = [
     { name = "httpx" },
     { name = "mcp", extra = ["cli"] },

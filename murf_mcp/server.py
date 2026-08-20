@@ -57,6 +57,7 @@ mcp = FastMCP("MurfAi")
 
         content List[TTSDetail]: List of TTSDetail objects containing text and voice details.
             text (str): The text to convert to speech.
+            speaker_index [int]: Index of the speaker
             voice_id (Optional[str]): Specific voice ID to use. If provided, it overrides voice_query, do not use this unless you know the exact voice_id.
             audio_duration (float): Target duration of the output audio in seconds. Defaults to 0 (auto).
             channel_type (str): Audio channel type, e.g., "MONO" or "STEREO". Defaults to "MONO".
@@ -69,7 +70,7 @@ mcp = FastMCP("MurfAi")
             sample_rate (float): Sample rate in Hz. Defaults to 24000.0. Valid values are 8000, 24000, 44100, 48000
             style (Optional[str]): Speaking style such as "cheerful", "sad", etc. Always check locale specific styles for the voice are available.
             variation (int): Variation index for voices that support multiple variants. Defaults to 1, ranges from 0 to 5.
-            speaker_index [int]: Index of the speaker, if single speaker this is 0 by default.
+            
     """,
 )
 async def text_to_speech(
